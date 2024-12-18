@@ -32,20 +32,25 @@ const Navbar = () => {
   };
 
   return (
-      <div className="dark:bg-gray-950 bg-opacity-90 shadow-md mb-8">
+    <div className="max-w-7xl mx-auto">
+      <div className="bg-white dark:bg-gray-950 bg-opacity-90 shadow-md mb-8 px-4 rounded-md">
         <div className="mx-auto max-w-7xl">
           <div className="py-4 flex justify-between">
             <div className="text-blue-500 dark:text-yellow-500 text-2xl font-bold hover:cursor-pointer">
               CodeShark🦈
             </div>
             <div className="space-x-4">
-              <button onClick={toggleTheme} className="text-yellow-500 text-2xl">
+              <button
+                onClick={toggleTheme}
+                className="text-yellow-500 text-2xl"
+              >
                 {isDarkMode ? <MdSunny /> : <FaMoon />}
               </button>
             </div>
           </div>
         </div>
       </div>
+    </div>
   );
 };
 

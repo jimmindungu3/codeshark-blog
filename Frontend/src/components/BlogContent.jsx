@@ -2,8 +2,8 @@ import React from "react";
 
 const BlogContent = () => {
   return (
-    <div className="bg-gray-200">
-      <h1 className="px-4 pt-6 text-2xl font-bold text-blue-500">
+    <div className="bg-white dark:bg-gray-800 dark:text-gray-200 rounded-l-md">
+      <h1 className="px-4 pt-6 text-2xl font-bold text-blue-500 dark:text-yellow-500">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </h1>
       <div className="gap-4 p-4">
@@ -102,7 +102,7 @@ const BlogContent = () => {
         Consequatur doloremque labore asperiores officia veniam delectus
         assumenda!
       </div>
-      <div className="px-4 pb-12 pt-4 text-sm text-blue-700 italic ">
+      <div className="px-4 pb-12 pt-4 text-sm text-blue-500 dark:text-yellow-500 font-semibold italic ">
         By CodeShark on 12 Dec, 2024
       </div>
     </div>
