@@ -3,7 +3,7 @@ import { MdSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   // Retrieve theme from localStorage on initial load
   useEffect(() => {
