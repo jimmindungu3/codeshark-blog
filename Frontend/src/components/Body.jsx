@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 import SideBar from "./SideBar";
 import BlogContent from "./BlogContent";
 import { RiMenuUnfold3Fill } from "react-icons/ri";
 import { RiMenuFold3Fill } from "react-icons/ri";
 
+const blogs = {
+  blog1: lazy(() => import("./FirstProgrammingLanguage")),
+  blog2: lazy(() => import("./JSFrameworks")),
+  blog3: lazy(() => import("./AsycProgramming")),
+};
+
 const Body = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [currentBlog, setCurrentBlog] = useState(blogs.blog1);
+
+  const selectBlog = (selectedBlog) =>
+    setCurrentBlog(blogs[`blog${selectedBlog}`]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -39,14 +49,14 @@ const Body = () => {
           `}
         >
           <div className="h-full">
-            <SideBar />
+            <SideBar selectBlog={selectBlog} />
           </div>
         </div>
 
         {/* Blog Content */}
         <div className="col-span-12 md:col-span-9 overflow-y-auto">
           <div className="h-full">
-            <BlogContent />
+            <BlogContent currentBlog={currentBlog} />
           </div>
         </div>
       </div>

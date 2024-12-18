@@ -4,7 +4,7 @@ const FirstProgrammingLanguage = () => {
   return (
     <div className="p-6 mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-blue-500 dark:text-yellow-500">
-        Choosing Your First Programming Language
+        Choosing Your First Programming Language - Web Developer Biased
       </h1>
       <p className="text-lg mb-6">
         As an aspiring web developer, selecting your first programming language is an important decision. While many languages are out there, JavaScript and Python are two of the most popular and versatile choices for web development.
