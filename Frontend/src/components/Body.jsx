@@ -50,7 +50,7 @@ const Body = () => {
           `}
         >
           <div className="h-full">
-            <SideBar selectBlog={selectBlog} />
+            <SideBar selectBlog={selectBlog} setIsSidebarOpen={setIsSidebarOpen}/>
           </div>
         </div>
 

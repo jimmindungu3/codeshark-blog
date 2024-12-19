@@ -1,6 +1,6 @@
 import React from "react";
 
-const SideBar = ({ selectBlog }) => {
+const SideBar = ({ selectBlog, setIsSidebarOpen }) => {
   return (
     <div className="bg-white dark:bg-gray-800 pb-4 px-4 rounded-md">
       <div className="text-blue-500 dark:text-yellow-500 font-bold text-2xl pt-6">
