@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Prism from "prismjs";
+import "prismjs/components/prism-javascript";
+import "prismjs/themes/prism-okaidia.css"; // Use with dark theme
+// import "prismjs/themes/prism-coy.css";  // Use for together with my light theme
 
 const AsyncProgramming = () => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
     <div className="p-6 mx-auto">
       <h1 className="text-4xl font-bold mb-4 text-blue-500 dark:text-yellow-500">
@@ -36,8 +44,9 @@ const AsyncProgramming = () => {
         passed as an argument to another function, which is then executed once a
         task is completed.
       </p>
-      <pre className="bg-gray-100 p-4 rounded-md mb-6">
-        {`function fetchData(callback) {
+      <pre className="p-4 rounded-md mb-6">
+        <code className="language-javascript">
+          {`function fetchData(callback) {
   setTimeout(() => {
     callback("Data fetched!");
   }, 2000);
@@ -46,6 +55,7 @@ const AsyncProgramming = () => {
 fetchData((message) => {
   console.log(message); // Output: Data fetched!
 });`}
+        </code>
       </pre>
       <p className="text-lg">
         While callbacks are simple to use, they can lead to "callback hell" when
@@ -62,22 +72,24 @@ fetchData((message) => {
         never. It allows you to handle asynchronous operations more gracefully,
         providing a more structured way to deal with asynchronous code.
       </p>
-      <pre className="bg-gray-100 p-4 rounded-md mb-6">
-        {`function fetchData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("Data fetched!");
+      <pre className="mb-6">
+        <code className="language-javascript">
+          {`function fetchData() {
+return new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Data fetched!");
     }, 2000);
-  });
-}
-
-fetchData()
-  .then((message) => {
-    console.log(message); // Output: Data fetched!
-  })
-  .catch((error) => {
-    console.error(error);
-  });`}
+    });
+    }
+    
+    fetchData()
+    .then((message) => {
+      console.log(message); // Output: Data fetched!
+      })
+      .catch((error) => {
+        console.error(error);
+        });`}
+        </code>
       </pre>
       <p className="text-lg">
         Promises make it easier to handle errors and manage asynchronous
@@ -94,8 +106,9 @@ fetchData()
         it allows you to write asynchronous code in a synchronous style, which
         makes it more readable and easier to maintain.
       </p>
-      <pre className="bg-gray-100 p-4 rounded-md mb-6">
-        {`async function fetchData() {
+      <pre className="mb-6">
+        <code className="language-javascript">
+          {`async function fetchData() {
   return "Data fetched!";
 }
 
@@ -105,6 +118,7 @@ async function displayData() {
 }
 
 displayData();`}
+        </code>
       </pre>
       <p className="text-lg">
         With async/await, the code looks cleaner and more natural, as if it’s
