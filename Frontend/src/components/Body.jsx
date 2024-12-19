@@ -1,8 +1,7 @@
 import React, { lazy, useState } from "react";
 import SideBar from "./SideBar";
 import BlogContent from "./BlogContent";
-import { RiMenuUnfold3Fill } from "react-icons/ri";
-import { RiMenuFold3Fill } from "react-icons/ri";
+import { RiMenuUnfold3Fill, RiMenuFold3Fill } from "react-icons/ri";
 
 const blogs = {
   blog1: lazy(() => import("./FirstProgrammingLanguage")),
@@ -14,8 +13,10 @@ const Body = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [currentBlog, setCurrentBlog] = useState(blogs.blog1);
 
-  const selectBlog = (selectedBlog) =>
+  const selectBlog = (selectedBlog) => {
     setCurrentBlog(blogs[`blog${selectedBlog}`]);
+    setIsSidebarOpen(false); // Close sidebar after selection
+  };
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -26,7 +27,7 @@ const Body = () => {
       {/* Mobile Menu Toggle Button */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden fixed z-50 top-16 left-0 bg-gray-100 p-2 rounded-md shadow-md "
+        className="md:hidden fixed z-50 top-16 left-0 bg-gray-100 p-2 rounded-md shadow-md"
       >
         {isSidebarOpen ? <RiMenuFold3Fill /> : <RiMenuUnfold3Fill />}
       </button>
