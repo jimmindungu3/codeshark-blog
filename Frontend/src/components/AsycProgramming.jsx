@@ -57,11 +57,11 @@ displayData();`;
   }, []);
 
   return (
-    <div className="p-2 md:p-6 mx-auto">
-      <h1 className="text-xl md:text-xl font-bold mb-2 text-blue-500 dark:text-yellow-500">
+    <div className="p-2 md:p-6 mx-auto bg-white dark:bg-gray-800">
+      <h1 className="text-xl md:text-3xl font-bold mb-2 text-blue-500 dark:text-yellow-500">
         Asynchronous Programming in JavaScript
       </h1>
-      <p className="mb-6 text-sm md:text-base">
+      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         Asynchronous programming is a fundamental concept for modern JavaScript
         development. It allows you to handle tasks like fetching data from APIs
         or performing I/O operations without blocking the execution of other
@@ -73,7 +73,7 @@ displayData();`;
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         What is Asynchronous Programming?
       </h2>
-      <p className="mb-6 text-sm md:text-base">
+      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         Asynchronous programming enables your program to initiate a task and
         move on to the next one without waiting for the first task to finish. In
         traditional, synchronous programming, each task must be completed before
@@ -85,7 +85,7 @@ displayData();`;
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         The Callback Function: The First Step
       </h2>
-      <p className="mb-6 text-sm md:text-base">
+      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         One of the earliest approaches to handling asynchronous operations in
         JavaScript is through callback functions. A callback is a function
         passed as an argument to another function, which is then executed once a
@@ -114,7 +114,7 @@ displayData();`;
         </pre>
       </div>
 
-      <p className="mb-6 text-sm md:text-base">
+      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         While callbacks are simple to use, they can lead to "callback hell" when
         you nest many callbacks inside each other. This makes the code harder to
         read and maintain.
@@ -123,7 +123,7 @@ displayData();`;
       <h2 className="text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500">
         Promises: A Better Solution
       </h2>
-      <p className="mb-4 text-sm md:text-base">
+      <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
         To improve upon callbacks, JavaScript introduced promises. A promise
         represents a value that might be available now, or in the future, or
         never. It allows you to handle asynchronous operations more gracefully,
@@ -152,7 +152,7 @@ displayData();`;
         </pre>
       </div>
 
-      <p className="mb-6 text-sm md:text-base">
+      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         Promises make it easier to handle errors and manage asynchronous
         operations in a more readable way, reducing the complexity of nested
         functions.
@@ -161,7 +161,7 @@ displayData();`;
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         Async/Await: Simplifying Async Code
       </h2>
-      <p className="mb-4 text-sm md:text-base">
+      <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
         The async/await syntax, introduced in ECMAScript 2017, is the modern way
         of working with asynchronous code. It is built on top of promises, but
         it allows you to write asynchronous code in a synchronous style, which
@@ -190,7 +190,7 @@ displayData();`;
         </pre>
       </div>
 
-      <p className="mb-4 text-sm md:text-base">
+      <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
         With async/await, the code looks cleaner and more natural, as if it’s
         synchronous, even though the operations are asynchronous. You can also
         use `try/catch` to handle errors, making it easier to debug.
@@ -199,13 +199,13 @@ displayData();`;
       <h2 className="text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500">
         Why is Asynchronous Programming Important?
       </h2>
-      <p className="mb-1 text-sm md:text-base">
+      <p className="mb-1 text-sm md:text-base text-gray-800 dark:text-gray-300">
         Asynchronous programming is essential in web development, particularly
         when interacting with external data sources. For example, making HTTP
         requests to fetch data from an API or loading resources without blocking
         the UI. Using asynchronous techniques, you can:
       </p>
-      <ul className="mb-4 text-sm md:text-base list-disc ml-6 md:ml-8">
+      <ul className="mb-4 text-sm md:text-base list-disc ml-6 md:ml-8 text-gray-800 dark:text-gray-300">
         <li>
           Improve application performance by not blocking the main thread.
         </li>
@@ -221,12 +221,12 @@ displayData();`;
       <h2 className="text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500">
         Handling Errors in Asynchronous Code
       </h2>
-      <p className="mb-1 text-sm md:text-base">
+      <p className="mb-1 text-sm md:text-base text-gray-800 dark:text-gray-300">
         Asynchronous code introduces the potential for errors that may occur
         during the execution of tasks. Both promises and async/await provide
         mechanisms for handling these errors:
       </p>
-      <ul className="list-disc ml-6 md:ml-8 mb-6 text-sm md:text-base">
+      <ul className="list-disc ml-6 md:ml-8 mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         <li>Promises: Use `.catch()` to handle errors.</li>
         <li>Async/Await: Use `try/catch` blocks to handle exceptions.</li>
       </ul>
@@ -234,7 +234,7 @@ displayData();`;
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         Conclusion
       </h2>
-      <p className="mb-4 text-sm md:text-base">
+      <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
         Asynchronous programming is a critical skill for modern JavaScript
         developers. Mastering callbacks, promises, and async/await will enable
         you to write more efficient and scalable code. By understanding how to

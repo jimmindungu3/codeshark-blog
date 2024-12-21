@@ -5,7 +5,6 @@ import { FaMoon } from "react-icons/fa";
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Retrieve theme from localStorage on initial load
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -14,7 +13,6 @@ const Navbar = () => {
     }
   }, []);
 
-  // Apply theme and persist to localStorage
   useEffect(() => {
     const html = document.documentElement;
     if (isDarkMode) {
@@ -26,7 +24,6 @@ const Navbar = () => {
     }
   }, [isDarkMode]);
 
-  // Toggle theme handler
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
   };
@@ -39,14 +36,9 @@ const Navbar = () => {
             <div className="text-blue-500 dark:text-yellow-500 text-2xl font-bold hover:cursor-pointer">
               CodeShark🦈
             </div>
-            <div className="space-x-4">
-              <button
-                onClick={toggleTheme}
-                className="text-yellow-500 text-2xl"
-              >
-                {isDarkMode ? <MdSunny /> : <FaMoon />}
-              </button>
-            </div>
+            <button onClick={toggleTheme} className="text-yellow-500 text-2xl">
+              {isDarkMode ? <MdSunny /> : <FaMoon />}
+            </button>
           </div>
         </div>
       </div>
