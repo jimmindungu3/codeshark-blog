@@ -6,7 +6,11 @@ import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-okaidia.css";
 
 const AsyncProgramming = () => {
-  const [copied, setCopied] = useState(false);
+  const [copiedStates, setCopiedStates] = useState({
+    callback: false,
+    promise: false,
+    async: false,
+  });
 
   const callbackexample = `function fetchData(callback) {
   setTimeout(() => {
@@ -45,10 +49,18 @@ async function displayData() {
 
 displayData();`;
 
-  const copyToClipboard = (code) => {
+  const copyToClipboard = (code, key) => {
     navigator.clipboard.writeText(code).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setCopiedStates((prevState) => ({
+        ...prevState,
+        [key]: true,
+      }));
+      setTimeout(() => {
+        setCopiedStates((prevState) => ({
+          ...prevState,
+          [key]: false,
+        }));
+      }, 2000);
     });
   };
 
@@ -70,18 +82,7 @@ displayData();`;
         JavaScript.
       </p>
 
-      <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
-        What is Asynchronous Programming?
-      </h2>
-      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
-        Asynchronous programming enables your program to initiate a task and
-        move on to the next one without waiting for the first task to finish. In
-        traditional, synchronous programming, each task must be completed before
-        moving to the next, which can slow down performance, especially in web
-        applications. Asynchronous programming solves this by allowing tasks to
-        run in the background, improving efficiency.
-      </p>
-
+      {/* Callback Example */}
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         The Callback Function: The First Step
       </h2>
@@ -91,15 +92,14 @@ displayData();`;
         passed as an argument to another function, which is then executed once a
         task is completed.
       </p>
-
       <div className="mb-4 bg-gray-900">
         <div className="flex justify-between text-sm px-4 py-1 text-white dark:text-white">
           <div className="">JavaScript</div>
-          <button onClick={() => copyToClipboard(callbackexample)}>
-            {copied ? (
+          <button onClick={() => copyToClipboard(callbackexample, "callback")}>
+            {copiedStates.callback ? (
               <div className="flex gap-2 items-center">
                 <FaCheckCircle />
-                Copied code
+                Copied
               </div>
             ) : (
               <div className="flex gap-2 items-center">
@@ -114,12 +114,7 @@ displayData();`;
         </pre>
       </div>
 
-      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
-        While callbacks are simple to use, they can lead to "callback hell" when
-        you nest many callbacks inside each other. This makes the code harder to
-        read and maintain.
-      </p>
-
+      {/* Promise Example */}
       <h2 className="text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500">
         Promises: A Better Solution
       </h2>
@@ -129,15 +124,14 @@ displayData();`;
         never. It allows you to handle asynchronous operations more gracefully,
         providing a more structured way to deal with asynchronous code.
       </p>
-
       <div className="mb-4 bg-gray-900">
         <div className="flex justify-between text-sm px-4 py-1 text-white dark:text-white">
           <div className="">JavaScript</div>
-          <button onClick={() => copyToClipboard(promiseExample)}>
-            {copied ? (
+          <button onClick={() => copyToClipboard(promiseExample, "promise")}>
+            {copiedStates.promise ? (
               <div className="flex gap-2 items-center">
                 <FaCheckCircle />
-                Copied code
+                Copied
               </div>
             ) : (
               <div className="flex gap-2 items-center">
@@ -152,12 +146,7 @@ displayData();`;
         </pre>
       </div>
 
-      <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
-        Promises make it easier to handle errors and manage asynchronous
-        operations in a more readable way, reducing the complexity of nested
-        functions.
-      </p>
-
+      {/* Async/Await Example */}
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         Async/Await: Simplifying Async Code
       </h2>
@@ -167,15 +156,14 @@ displayData();`;
         it allows you to write asynchronous code in a synchronous style, which
         makes it more readable and easier to maintain.
       </p>
-
       <div className="mb-4 bg-gray-900">
         <div className="flex justify-between text-sm px-4 py-1 text-white dark:text-white">
           <div className="">JavaScript</div>
-          <button onClick={() => copyToClipboard(asyncExample)}>
-            {copied ? (
+          <button onClick={() => copyToClipboard(asyncExample, "async")}>
+            {copiedStates.async ? (
               <div className="flex gap-2 items-center">
                 <FaCheckCircle />
-                Copied code
+                Copied
               </div>
             ) : (
               <div className="flex gap-2 items-center">
@@ -189,48 +177,6 @@ displayData();`;
           <code className="language-javascript">{asyncExample}</code>
         </pre>
       </div>
-
-      <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
-        With async/await, the code looks cleaner and more natural, as if it’s
-        synchronous, even though the operations are asynchronous. You can also
-        use `try/catch` to handle errors, making it easier to debug.
-      </p>
-
-      <h2 className="text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500">
-        Why is Asynchronous Programming Important?
-      </h2>
-      <p className="mb-1 text-sm md:text-base text-gray-800 dark:text-gray-300">
-        Asynchronous programming is essential in web development, particularly
-        when interacting with external data sources. For example, making HTTP
-        requests to fetch data from an API or loading resources without blocking
-        the UI. Using asynchronous techniques, you can:
-      </p>
-      <ul className="mb-4 text-sm md:text-base list-disc ml-6 md:ml-8 text-gray-800 dark:text-gray-300">
-        <li>
-          Improve application performance by not blocking the main thread.
-        </li>
-        <li>
-          Allow users to interact with the app while background tasks run.
-        </li>
-        <li>
-          Handle complex workflows like fetching data from multiple sources
-          without waiting for one operation to finish before starting another.
-        </li>
-      </ul>
-
-      <h2 className="text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500">
-        Handling Errors in Asynchronous Code
-      </h2>
-      <p className="mb-1 text-sm md:text-base text-gray-800 dark:text-gray-300">
-        Asynchronous code introduces the potential for errors that may occur
-        during the execution of tasks. Both promises and async/await provide
-        mechanisms for handling these errors:
-      </p>
-      <ul className="list-disc ml-6 md:ml-8 mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
-        <li>Promises: Use `.catch()` to handle errors.</li>
-        <li>Async/Await: Use `try/catch` blocks to handle exceptions.</li>
-      </ul>
-
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         Conclusion
       </h2>
