@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BsFillClipboard2Fill } from "react-icons/bs";
 import { FaCheckCircle } from "react-icons/fa";
+import { ImNewTab } from "react-icons/im";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism-okaidia.css";
@@ -70,9 +71,18 @@ displayData();`;
 
   return (
     <div className="p-2 md:p-6 mx-auto bg-white dark:bg-gray-800">
-      <h1 className="text-xl md:text-3xl font-bold mb-2 text-blue-500 dark:text-yellow-500">
-        Asynchronous Programming in JavaScript
-      </h1>
+      <div className="flex items-center">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group text-xl md:text-3xl font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+        >
+          Asynchronous Programming in JavaScript
+          <ImNewTab className="ml-2 w-4 h-4 dark:text-white  opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </a>
+      </div>
+
       <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         Asynchronous programming is a fundamental concept for modern JavaScript
         development. It allows you to handle tasks like fetching data from APIs
@@ -83,9 +93,18 @@ displayData();`;
       </p>
 
       {/* Callback Example */}
-      <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
-        The Callback Function: The First Step
-      </h2>
+      <div className="flex items-center">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+        >
+          The Callback Function: The First Step
+          <ImNewTab className="ml-2 w-4 h-4 opacity-0 dark:text-white group-hover:opacity-100 transition-opacity duration-300" />
+        </a>
+      </div>
+
       <p className="mb-6 text-sm md:text-base text-gray-800 dark:text-gray-300">
         One of the earliest approaches to handling asynchronous operations in
         JavaScript is through callback functions. A callback is a function
@@ -115,9 +134,18 @@ displayData();`;
       </div>
 
       {/* Promise Example */}
-      <h2 className="text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500">
-        Promises: A Better Solution
-      </h2>
+      <div className="flex items-center">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+        >
+          Promises: A Better Solution
+          <ImNewTab className="ml-2 w-4 h-4 opacity-0 dark:text-white group-hover:opacity-100 transition-opacity duration-300" />
+        </a>
+      </div>
+
       <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
         To improve upon callbacks, JavaScript introduced promises. A promise
         represents a value that might be available now, or in the future, or
@@ -147,9 +175,18 @@ displayData();`;
       </div>
 
       {/* Async/Await Example */}
-      <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
-        Async/Await: Simplifying Async Code
-      </h2>
+      <div className="flex items-center">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+        >
+          Async/Await: Simplifying Async Code
+          <ImNewTab className="ml-2 w-4 h-4 opacity-0 dark:text-white group-hover:opacity-100 transition-opacity duration-300" />
+        </a>
+      </div>
+
       <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
         The async/await syntax, introduced in ECMAScript 2017, is the modern way
         of working with asynchronous code. It is built on top of promises, but
