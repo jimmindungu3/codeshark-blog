@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MdSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -33,9 +34,15 @@ const Navbar = () => {
       <div className="bg-white dark:bg-gray-800 shadow-md mb-8 px-4 rounded-md">
         <div className="mx-auto max-w-7xl">
           <div className="py-4 flex justify-between">
-            <div className="text-blue-500 dark:text-yellow-500 text-2xl font-bold hover:cursor-pointer">
+            {/* <div className="text-blue-500 dark:text-yellow-500 text-2xl font-bold hover:cursor-pointer">
               CodeShark🦈
-            </div>
+            </div> */}
+            <Link
+              to="/"
+              className="text-blue-500 dark:text-yellow-500 text-2xl font-bold hover:cursor-pointer"
+            >
+              CodeShark🦈
+            </Link>
             <button onClick={toggleTheme} className="text-yellow-500 text-2xl">
               {isDarkMode ? <MdSunny /> : <FaMoon />}
             </button>

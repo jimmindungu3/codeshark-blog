@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
 import Loader from "./components/Loader";
+import Home from "./components/Home";
 
 // Lazy Components
 const AsyncProgramming = lazy(() => import("./components/AsyncProgramming"));
@@ -15,8 +16,8 @@ const App = () => {
   return (
     <div className="dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
-        <Navbar />
         <Router>
+          <Navbar />
           <div className="grid grid-cols-12 gap-4 h-screen">
             <div className="col-span-3 overflow-y-auto">
               <Sidebar />
@@ -24,6 +25,7 @@ const App = () => {
             <div className="col-span-9 overflow-y-auto">
               <Suspense fallback={<Loader />}>
                 <Routes>
+                  <Route path="/" element={<Home />} />
                   <Route
                     path="/AsyncProgramming"
                     element={<AsyncProgramming />}
