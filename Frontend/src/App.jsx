@@ -1,20 +1,46 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Body from "./components/Body";
+import Sidebar from "./components/SideBar";
+import Loader from "./components/Loader";
 
-function App() {
+// Lazy Components
+const AsyncProgramming = lazy(() => import("./components/AsyncProgramming"));
+const FirstProgrammingLanguage = lazy(() =>
+  import("./components/FirstProgrammingLanguage")
+);
+const JSFrameworks = lazy(() => import("./components/JSFrameworks"));
+
+const App = () => {
   return (
-    <BrowserRouter>
-      <div className="bg-gray-300 dark:bg-gray-950 dark:bg-opacity-95">
+    <div className="dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Navigate to="/blog/first-programming-language" replace />} />
-          <Route path="/blog/*" element={<Body />} />
-        </Routes>
+        <Router>
+          <div className="grid grid-cols-12 gap-4 h-screen">
+            <div className="col-span-3 overflow-y-auto">
+              <Sidebar />
+            </div>
+            <div className="col-span-9 overflow-y-auto">
+              <Suspense fallback={<Loader />}>
+                <Routes>
+                  <Route
+                    path="/AsyncProgramming"
+                    element={<AsyncProgramming />}
+                  />
+                  <Route
+                    path="/FirstProgrammingLanguage"
+                    element={<FirstProgrammingLanguage />}
+                  />
+                  <Route path="/JSFrameworks" element={<JSFrameworks />} />
+                </Routes>
+              </Suspense>
+            </div>
+          </div>
+        </Router>
       </div>
-    </BrowserRouter>
+    </div>
   );
-}
+};
 
 export default App;
