@@ -54,7 +54,7 @@ const Home = () => {
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         Let's Learn and Grow Together
       </h2>
-      <p className="text-sm md:text-base text-gray-800 dark:text-gray-300">
+      <p className="text-sm md:text-base text-gray-800 dark:text-gray-300 pb-8">
         As a developer and educator, I believe in sharing knowledge to build a
         stronger tech community. Through this blog, I aim to demystify complex
         topics, share real-world examples, and inspire others to achieve their

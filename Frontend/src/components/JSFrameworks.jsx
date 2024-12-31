@@ -109,7 +109,7 @@ const JSFrameworks = () => {
       <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
         Conclusion
       </h2>
-      <p className="text-sm md:text-base text-gray-800 dark:text-gray-300">
+      <p className="text-sm md:text-base text-gray-800 dark:text-gray-300 pb-8">
         When choosing a JavaScript framework, consider the complexity of your
         project and your long-term goals. React is perfect for creating
         interactive UIs with a modular approach, Angular is ideal for
