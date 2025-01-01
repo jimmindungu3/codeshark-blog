@@ -32,7 +32,7 @@ const Navbar = ({ toggleMobileMenu }) => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="bg-white dark:bg-gray-800 shadow-md mb-6 px-4 rounded-b-sm">
+      <div className="bg-white dark:bg-gray-800 shadow-md mb-6 px-4 rounded-b-sm md:mx-2">
         <div className="mx-auto max-w-7xl">
           <div className="py-4 flex justify-between">
             <Link
@@ -44,7 +44,7 @@ const Navbar = ({ toggleMobileMenu }) => {
             <div className="space-x-2 text-2xl items-center">
               <button
                 onClick={toggleTheme}
-                className="dark:text-yellow-500"
+                className="dark:text-white"
               >
                 {isDarkMode ? <MdSunny /> : <LuSunMoon />}
               </button>

@@ -9,8 +9,8 @@ const SideBar = ({ closeSidebar }) => {
       </h3>
       <ul className="text-gray-600 dark:text-gray-400 font-semibold space-y-4">
         <li className="hover:underline">
-          <Link to="/AsyncProgramming" onClick={closeSidebar}>
-            Asynchronous Programming In Javascript
+          <Link to="/web-development" onClick={closeSidebar}>
+            Introduction To web Development
           </Link>
         </li>
         <li className="hover:underline">
@@ -18,6 +18,12 @@ const SideBar = ({ closeSidebar }) => {
             Choosing Your First Programming Language
           </Link>
         </li>
+        <li className="hover:underline">
+          <Link to="/AsyncProgramming" onClick={closeSidebar}>
+            Asynchronous Programming In Javascript
+          </Link>
+        </li>
+
         <li className="hover:underline">
           <Link to="/JSFrameworks" onClick={closeSidebar}>
             Javascript Frameworks

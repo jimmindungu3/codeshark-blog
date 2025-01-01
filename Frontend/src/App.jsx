@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
 import Loader from "./components/Loader";
 import Home from "./components/Home";
+import WebDevelopment from "./components/WebDevelopment";
 
 // Lazy Components
 const AsyncProgramming = lazy(() => import("./components/AsyncProgramming"));
@@ -65,6 +66,7 @@ const App = () => {
                     element={<FirstProgrammingLanguage />}
                   />
                   <Route path="/JSFrameworks" element={<JSFrameworks />} />
+                  <Route path="/web-development" element={<WebDevelopment />} />
                 </Routes>
               </Suspense>
             </div>
