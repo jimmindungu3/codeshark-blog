@@ -37,20 +37,20 @@ const Navbar = ({ toggleMobileMenu }) => {
           <div className="py-4 flex justify-between">
             <Link
               to="/"
-              className="text-blue-500 dark:text-yellow-500 text-2xl font-bold hover:cursor-pointer"
+              className="text-gray-700 dark:text-white text-2xl font-bold hover:cursor-pointer"
             >
               CodeShark🦈
             </Link>
             <div className="space-x-2 text-2xl items-center">
               <button
                 onClick={toggleTheme}
-                className="dark:text-white"
+                className="text-gray-700 dark:text-gray-300"
               >
                 {isDarkMode ? <MdSunny /> : <LuSunMoon />}
               </button>
-              <button 
+              <button
                 onClick={toggleMobileMenu}
-                className="dark:text-white md:hidden"
+                className="text-gray-700 dark:text-gray-300 md:hidden"
               >
                 <IoMenu />
               </button>

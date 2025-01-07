@@ -76,7 +76,7 @@ displayData();`;
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
           target="_blank"
           rel="noopener noreferrer"
-          className="group text-xl md:text-3xl font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+          className="group text-xl md:text-3xl font-semibold mb-3 text-gray-700 dark:text-gray-300 hover:underline flex items-center"
         >
           Asynchronous Programming in JavaScript
           <ImNewTab className="ml-2 w-4 h-4 dark:text-white  opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -98,7 +98,7 @@ displayData();`;
           href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function"
           target="_blank"
           rel="noopener noreferrer"
-          className="group text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+          className="group text-base md:text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300 hover:underline flex items-center"
         >
           The Callback Function: The First Step
           <ImNewTab className="ml-2 w-4 h-4 opacity-0 dark:text-white group-hover:opacity-100 transition-opacity duration-300" />
@@ -139,7 +139,7 @@ displayData();`;
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
           target="_blank"
           rel="noopener noreferrer"
-          className="group text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+          className="group text-base md:text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300 hover:underline flex items-center"
         >
           Promises: A Better Solution
           <ImNewTab className="ml-2 w-4 h-4 opacity-0 dark:text-white group-hover:opacity-100 transition-opacity duration-300" />
@@ -180,7 +180,7 @@ displayData();`;
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
           target="_blank"
           rel="noopener noreferrer"
-          className="group text-base md:text-lg font-semibold mb-3 text-blue-500 dark:text-yellow-500 hover:underline flex items-center"
+          className="group text-base md:text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300 hover:underline flex items-center"
         >
           Async/Await: Simplifying Async Code
           <ImNewTab className="ml-2 w-4 h-4 opacity-0 dark:text-white group-hover:opacity-100 transition-opacity duration-300" />
@@ -214,7 +214,7 @@ displayData();`;
           <code className="language-javascript">{asyncExample}</code>
         </pre>
       </div>
-      <h2 className="text-base md:text-lg font-semibold mb-2 text-blue-500 dark:text-yellow-500">
+      <h2 className="text-base md:text-lg font-semibold mb-2 text-gray-700 dark:text-gray-300">
         Conclusion
       </h2>
       <p className="mb-4 text-sm md:text-base text-gray-800 dark:text-gray-300">
