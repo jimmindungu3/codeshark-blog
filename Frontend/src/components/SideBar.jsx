@@ -7,7 +7,7 @@ const SideBar = ({ closeSidebar }) => {
       <h3 className="text-xl md:text-3xl font-bold mb-2 text-gray-700 dark:text-white">
         Blogs
       </h3>
-      <ul className="text-gray-600 dark:text-gray-400 font-semibold space-y-4">
+      <ul className="text-gray-600 dark:text-gray-300 font-semibold space-y-4">
         <li className="hover:underline">
           <Link to="/javascript-tree" onClick={closeSidebar}>
             Javascript Tree
