@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
 import Loader from "./components/Loader";
 import Home from "./components/Home";
+import VarLetConst from "./components/VarLetConst";
 
 // Lazy Components
 const JavascriptTree = lazy(() => import("./components/JavascriptTree"));
@@ -59,6 +60,10 @@ const App = () => {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/javascript-tree" element={<JavascriptTree />} />
+                  <Route
+                    path="/var-let-const-in-javascript"
+                    element={<VarLetConst />}
+                  />
                   <Route
                     path="/asynchronous-programming-in-javascript"
                     element={<AsyncProgramming />}
