@@ -15,7 +15,7 @@ const SideBar = ({ closeSidebar }) => {
         </li>
         <li className="hover:underline">
           <Link to="/var-let-const-in-javascript" onClick={closeSidebar}>
-            Var vs Let vs Const in JavaScript
+            Understanding var, let and const in JavaScript
           </Link>
         </li>
         <li className="hover:underline">
