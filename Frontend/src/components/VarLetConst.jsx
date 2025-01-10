@@ -10,7 +10,7 @@ const VarLetConst = () => {
 
   return (
     <div className="p-4 bg-white dark:bg-gray-800 mb-8">
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
+      <h1 className="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-200">
         Understanding Var, Let, and Const in JavaScript
       </h1>
 

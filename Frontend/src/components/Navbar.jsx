@@ -5,16 +5,17 @@ import { LuSunMoon } from "react-icons/lu";
 import { IoMenu } from "react-icons/io5";
 
 const Navbar = ({ toggleMobileMenu }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  useEffect(() => {
+  // Initialize theme state based on localStorage or system preference
+  const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
+    if (savedTheme) {
+      return savedTheme === "dark";
     }
-  }, []);
+    // If no saved theme, check system preference
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
+  // Apply theme changes and save to localStorage
   useEffect(() => {
     const html = document.documentElement;
     if (isDarkMode) {
@@ -25,6 +26,19 @@ const Navbar = ({ toggleMobileMenu }) => {
       localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
+
+  // Listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      if (!localStorage.getItem("theme")) {
+        setIsDarkMode(e.matches);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
@@ -41,16 +55,18 @@ const Navbar = ({ toggleMobileMenu }) => {
             >
               CodeShark🦈
             </Link>
-            <div className="space-x-2 text-2xl items-center">
+            <div className="space-x-2 text-2xl items-center flex">
               <button
                 onClick={toggleTheme}
-                className="text-gray-700 dark:text-gray-300"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
               >
                 {isDarkMode ? <MdSunny /> : <LuSunMoon />}
               </button>
               <button
                 onClick={toggleMobileMenu}
-                className="text-gray-700 dark:text-gray-300 md:hidden"
+                className="text-gray-700 dark:text-gray-300 md:hidden hover:text-gray-900 dark:hover:text-white transition-colors"
+                aria-label="Toggle mobile menu"
               >
                 <IoMenu />
               </button>

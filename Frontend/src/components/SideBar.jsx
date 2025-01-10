@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const SideBar = ({ closeSidebar }) => {
   return (
     <div className="dark:bg-gray-800 p-4">
-      <h3 className="text-xl md:text-3xl font-bold mb-2 text-gray-700 dark:text-white">
+      <h3 className="text-xl md:text-3xl font-bold mb-2 text-gray-800 dark:text-white">
         Blogs
       </h3>
-      <ul className="text-gray-600 dark:text-gray-300 font-semibold space-y-4">
+      <ul className="text-gray-800 dark:text-gray-300 space-y-4">
         <li className="hover:underline">
           <Link to="/javascript-tree" onClick={closeSidebar}>
             Javascript Tree
