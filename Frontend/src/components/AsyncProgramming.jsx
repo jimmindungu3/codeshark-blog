@@ -11,7 +11,7 @@ const AsyncProgramming = () => {
   return (
     <div className="p-2 md:p-6 mx-auto bg-white dark:bg-gray-800">
       <div className="flex items-center">
-        <a className="group text-xl md:text-3xl font-semibold mb-3 text-gray-700 dark:text-gray-300 hover:underline flex items-center">
+        <a className="group text-xl md:text-3xl font-semibold mb-3 text-gray-700 dark:text-gray-300">
           Asynchronous Programming in JavaScript
         </a>
       </div>
@@ -27,7 +27,7 @@ const AsyncProgramming = () => {
 
       {/* Callback Example */}
       <div className="flex items-center">
-        <a className="group text-base md:text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300 hover:underline flex items-center">
+        <a className="group text-base md:text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300">
           The Callback Function: The First Step
         </a>
       </div>
