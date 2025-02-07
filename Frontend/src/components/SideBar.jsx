@@ -7,7 +7,7 @@ const SideBar = ({ closeSidebar }) => {
       <h3 className="text-xl md:text-3xl font-bold mb-2 text-gray-800 dark:text-white">
         Blogs
       </h3>
-      <ul className="text-gray-800 dark:text-gray-300 space-y-4">
+      <ul className="text-gray-900 dark:text-gray-300 space-y-4">
         <li className="hover:underline">
           <Link to="/javascript-tree" onClick={closeSidebar}>
             Javascript Tree
@@ -39,7 +39,6 @@ const SideBar = ({ closeSidebar }) => {
             Asynchronous Programming In Javascript
           </Link>
         </li>
-
         <li className="hover:underline">
           <Link to="/javascript-frameworks" onClick={closeSidebar}>
             Javascript Frameworks

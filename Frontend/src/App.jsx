@@ -33,7 +33,7 @@ const App = () => {
           <Navbar toggleMobileMenu={toggleMobileMenu} />
           <div className="grid grid-cols-12 gap-4 h-screen md:mx-2">
             {/* Desktop Sidebar */}
-            <div className="hidden md:block col-span-3 overflow-y-auto bg-white dark:bg-gray-800 h-fit">
+            <div className="hidden md:block col-span-3 overflow-y-auto bg-white dark:bg-gray-800">
               <Sidebar />
             </div>
 

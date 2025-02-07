@@ -1,13 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const JavascriptTree = () => {
-  const renderTreeItem = (label, children) => (
+  const renderTreeItem = (label, children, to = null) => (
     <div className="ml-4 mb-2">
       <div className="flex items-start">
         <div className="text-gray-500 dark:text-gray-300 mr-2">|──</div>
         <div className="flex-1">
           <div className="font-semibold text-gray-700 dark:text-gray-300">
-            {label}
+            {to ? (
+              <Link to={to} className="text-blue-500 hover:underline">
+                {label}
+              </Link>
+            ) : (
+              label
+            )}
           </div>
           {children && (
             <div className="ml-4 mt-1 text-gray-700 dark:text-gray-300">
@@ -26,12 +33,14 @@ const JavascriptTree = () => {
       </h1>
       
       <div className="text-sm md:text-base">
-        {renderTreeItem("Variables", 
+        {renderTreeItem(
+          "Variables", 
           <div>
             {renderTreeItem("var")}
             {renderTreeItem("let")}
             {renderTreeItem("const")}
-          </div>
+          </div>,
+          "/var-let-const-in-javascript"
         )}
         
         {renderTreeItem("Data Types", 

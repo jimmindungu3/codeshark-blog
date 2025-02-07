@@ -9,7 +9,7 @@ const VarLetConst = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-white dark:bg-gray-800 mb-8">
+    <div className="p-4 bg-white dark:bg-gray-800">
       <h1 className="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-200">
         Understanding Var, Let, and Const in JavaScript
       </h1>
@@ -298,7 +298,7 @@ console.log(API_KEY); // "abc123"`}</code>
         When to Use Each
       </h2>
 
-      <div className="space-y-6">
+      <div className="space-y-6 mb-4">
         <div className="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
           <h3 className="text-lg font-semibold text-green-800 dark:text-green-200 mb-2">
             Use const when:
